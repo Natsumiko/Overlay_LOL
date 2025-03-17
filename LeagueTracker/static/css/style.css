@@ -49,3 +49,21 @@ h4 {
     background-color: rgba(255, 0, 0, 0.1);
     border-radius: 4px;
 }
+
+.team-name-input {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    margin-bottom: 10px;
+}
+
+.team-name-input:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: white;
+    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.1);
+}
+
+.team-name-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
