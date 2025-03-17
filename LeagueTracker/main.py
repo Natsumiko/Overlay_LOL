@@ -12,8 +12,8 @@ app.secret_key = os.environ.get("SESSION_SECRET", "default-secret-key")
 
 # Initialize LoL API
 lol_api = LoLAPI(
-    api_key=os.environ.get("RIOT_API_KEY", "RGAPI-abb59fb5-cfcb-453b-a42d-8ccd7a3f5673"),
-    encrypted_puuid=os.environ.get("SUMMONER_PUUID", "nYrHejZcliiI82HgzVmmOrQCsN1joEkm-v_bOW3mqF0jdpN6-p5OviJnRdLXyN22jZkg5Jy8NCmhhg")
+    api_key=os.environ.get("RIOT_API_KEY", "TO_FILL"),
+    encrypted_puuid=os.environ.get("SUMMONER_PUUID", "TO_FILL")
 )
 
 @app.route('/')
