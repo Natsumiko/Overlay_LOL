@@ -9,11 +9,19 @@
 </head>
 <body>
     <div class="container-fluid overlay-container">
+        <div class="row mb-3">
+            <div class="col-6">
+                <input type="text" class="form-control team-name-input" id="blue-team-name" placeholder="Blue Team Name" value="Blue Team">
+            </div>
+            <div class="col-6">
+                <input type="text" class="form-control team-name-input" id="red-team-name" placeholder="Red Team Name" value="Red Team">
+            </div>
+        </div>
         <div class="row">
             <!-- Blue Team -->
             <div class="col-6">
                 <div class="team-section blue-team">
-                    <h3>Blue Team</h3>
+                    <h3 id="blue-team-display">Blue Team</h3>
                     <div class="picks-container">
                         <h4>Picks</h4>
                         <div id="blue-picks" class="champion-list"></div>
@@ -24,11 +32,11 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Red Team -->
             <div class="col-6">
                 <div class="team-section red-team">
-                    <h3>Red Team</h3>
+                    <h3 id="red-team-display">Red Team</h3>
                     <div class="picks-container">
                         <h4>Picks</h4>
                         <div id="red-picks" class="champion-list"></div>
