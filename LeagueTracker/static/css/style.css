@@ -1,0 +1,51 @@
+.overlay-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 20px;
+}
+
+.team-section {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.blue-team {
+    background-color: rgba(0, 0, 255, 0.2);
+}
+
+.red-team {
+    background-color: rgba(255, 0, 0, 0.2);
+}
+
+.champion-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.champion-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+h4 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.error-message {
+    color: #ff4444;
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(255, 0, 0, 0.1);
+    border-radius: 4px;
+}
