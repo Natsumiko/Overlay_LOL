@@ -1,106 +1,53 @@
 # League of Legends Pick/Ban Overlay
 
-A Python application that creates an OBS overlay for League of Legends champion picks and bans by connecting to the League Client.
+A web-based application for manually creating League of Legends champion pick and ban overlays for streaming purposes, allowing real-time input and display of team compositions.
+
+## Features
+
+- Manual input of champion picks and bans
+- Real-time updates to the overlay
+- Customizable team names
+- Streaming-friendly overlay interface
+- Dark theme optimized for streaming
 
 ## Project Structure
+
 ```
 ├── main.py                 # Flask application entry point
-├── lcu_api.py             # League Client API integration
 ├── templates/
-│   └── overlay.html       # HTML template for the overlay
+│   ├── control.html       # Control panel for manual input
+│   └── overlay.html       # OBS overlay display
 └── static/
-    ├── css/
-    │   └── style.css      # Styling for the overlay
-    └── js/
-        └── update.js      # JavaScript for updating the overlay
+    └── css/
+        └── style.css      # Styling for the overlay
 ```
 
 ## Requirements
+
 - Python 3.11 or higher
-- League of Legends client installed and running
 - The following Python packages:
   - flask
-  - psutil
-  - requests
-  - urllib3
-
-## Local Installation
-
-1. Create a new directory for your project:
-```bash
-mkdir league-overlay
-cd league-overlay
-```
-
-2. Create and activate a virtual environment:
-```bash
-# On Windows:
-python -m venv venv
-venv\Scripts\activate
-
-# On macOS/Linux:
-python -m venv venv
-source venv/bin/activate
-```
-
-3. Install required packages:
-```bash
-pip install flask psutil requests urllib3
-```
-
-4. Create the following directory structure:
-```
-league-overlay/
-├── main.py
-├── lcu_api.py
-├── templates/
-│   └── overlay.html
-└── static/
-    ├── css/
-    │   └── style.css
-    └── js/
-        └── update.js
-```
-
-5. Copy all the provided files into their respective locations.
+  - gunicorn
 
 ## Running the Application
 
-1. Make sure your League of Legends client is running
-
-2. Start the Flask application:
+1. Start the Flask application:
 ```bash
-# On Windows:
-python main.py
-
-# On macOS/Linux:
 python main.py
 ```
 
-3. Access the overlay in your web browser:
-- URL: http://127.0.0.1:5000
-- If that doesn't work, try: http://localhost:5000
+2. Access the application:
+- Control Panel: http://127.0.0.1:5000/control
+  - Use this to input team names and champions
+- Overlay URL: http://127.0.0.1:5000
+  - Add this URL to OBS as a Browser Source
 
-## Troubleshooting
+## Using the Overlay
 
-If you can't connect to the application:
-
-1. Make sure you're using the correct URL:
-   - Try both `http://127.0.0.1:5000` and `http://localhost:5000`
-   - If using a different port, adjust the URL accordingly
-
-2. Check if the Flask server is running:
-   - Look for the message "Running on http://0.0.0.0:5000"
-   - Check for any error messages in the console
-
-3. Verify League Client:
-   - Ensure League of Legends client is running
-   - The application needs the client running to fetch pick/ban data
-
-4. Common Issues:
-   - Port 5000 already in use: Try changing the port in main.py
-   - Connection refused: Make sure your firewall isn't blocking the connection
-   - No data showing: Verify League client is running and you're in champion select
+1. Open the Control Panel in your browser
+2. Input team names for both sides
+3. Add champion picks and bans as they happen
+4. The overlay will update in real-time
 
 ## Setting up in OBS
 
@@ -111,8 +58,8 @@ If you can't connect to the application:
 
 ## Features
 
-- Real-time picks and bans display
+- Real-time manual input for picks and bans
 - Customizable team names
 - Dark theme optimized for streaming
-- Direct connection to League Client (no API key needed)
-- Automatic updates during champion select
+- Transparent background support for OBS
+- Reset button to clear all picks and bans
