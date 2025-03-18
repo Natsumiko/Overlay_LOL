@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pick/Ban Control Panel</title>
+    <link href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css" rel="stylesheet">
+    <style>
+        body { padding: 20px; }
+        .team-section { margin-bottom: 30px; }
+        .champion-input { margin-bottom: 10px; }
+        .pick-section, .ban-section { 
+            background: rgba(255,255,255,0.05);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mb-4">Pick/Ban Control Panel</h1>
+
+        <!-- Team Names -->
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <input type="text" class="form-control" id="blue-team-name" placeholder="Blue Team Name" value="Blue Team">
+            </div>
+            <div class="col-md-6">
+                <input type="text" class="form-control" id="red-team-name" placeholder="Red Team Name" value="Red Team">
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Blue Team -->
+            <div class="col-md-6 team-section">
+                <h2>Blue Team</h2>
+                <div class="pick-section">
+                    <h3>Picks</h3>
+                    <div id="blue-picks">
+                        <!-- 5 pick inputs -->
+                        <div class="champion-input">
+                            <input type="text" class="form-control" data-team="blue" data-type="picks" data-index="0" placeholder="Pick 1">
+                        </div>
+                        <div class="champion-input">
+                            <input type="text" class="form-control" data-team="blue" data-type="picks" data-index="1" placeholder="Pick 2">
+                        </div>
+                        <div class="champion-input">
+                            <input type="text" class="form-control" data-team="blue" data-type="picks" data-index="2" placeholder="Pick 3">
+                        </div>
+                        <div class="champion-input">
+                            <input type="text" class="form-control" data-team="blue" data-type="picks" data-index="3" placeholder="Pick 4">
+                        </div>
+                        <div class="champion-input">
+                            <input type="text" class="form-control" data-team="blue" data-type="picks" data-index="4" placeholder="Pick 5">
+                        </div>
+                    </div>
+                </div>
+                <div class="ban-section">
+                    <h3>Bans</h3>
+                    <div id="blue-bans">
+                        <!-- 5 ban inputs -->
+                        <div class="champion-input">
+                            <input type="text" class="form-control" data-team="blue" data-type="bans" data-index="0" placeholder="Ban 1">
+                        </div>
+                        <div class="champion-input">
+                            <input type="text" class="form-control" data-team="blue" data-type="bans" data-index="1" placeholder="Ban 2">
+                        </div>
+                        <div class="champion-input">
+                            <input type="text" class="form-control" data-team="blue" data-type="bans" data-index="2" placeholder="Ban 3">
+                        </div>
+                        <div class="champion-input">
+                            <input type="text" class="form-control" data-team="blue" data-type="bans" data-index="3" placeholder="Ban 4">
+                        </div>
+                        <div class="champion-input">
+                            <input type="text" class="form-control" data-team="blue" data-type="bans" data-index="4" placeholder="Ban 5">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Red Team -->
+            <div class="col-md-6 team-section">
+                <h2>Red Team</h2>
+                <div class="pick-section">
+                    <h3>Picks</h3>
+                    <div id="red-picks">
+                        <!-- 5 pick inputs -->
+                        <div class="champion-input">
+                            <input type="text" class="form-control" data-team="red" data-type="picks" data-index="0" placeholder="Pick 1">
+                        </div>
+                        <div class="champion-input">
+                            <input type="text" class="form-control" data-team="red" data-type="picks" data-index="1" placeholder="Pick 2">
+                        </div>
+                        <div class="champion-input">
+                            <input type="text" class="form-control" data-team="red" data-type="picks" data-index="2" placeholder="Pick 3">
+                        </div>
+                        <div class="champion-input">
+                            <input type="text" class="form-control" data-team="red" data-type="picks" data-index="3" placeholder="Pick 4">
+                        </div>
+                        <div class="champion-input">
+                            <input type="text" class="form-control" data-team="red" data-type="picks" data-index="4" placeholder="Pick 5">
+                        </div>
+                    </div>
+                </div>
+                <div class="ban-section">
+                    <h3>Bans</h3>
+                    <div id="red-bans">
+                        <!-- 5 ban inputs -->
+                        <div class="champion-input">
+                            <input type="text" class="form-control" data-team="red" data-type="bans" data-index="0" placeholder="Ban 1">
+                        </div>
+                        <div class="champion-input">
+                            <input type="text" class="form-control" data-team="red" data-type="bans" data-index="1" placeholder="Ban 2">
+                        </div>
+                        <div class="champion-input">
+                            <input type="text" class="form-control" data-team="red" data-type="bans" data-index="2" placeholder="Ban 3">
+                        </div>
+                        <div class="champion-input">
+                            <input type="text" class="form-control" data-team="red" data-type="bans" data-index="3" placeholder="Ban 4">
+                        </div>
+                        <div class="champion-input">
+                            <input type="text" class="form-control" data-team="red" data-type="bans" data-index="4" placeholder="Ban 5">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reset Button -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <button id="reset-button" class="btn btn-danger">Reset All</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Handle input changes
+        document.querySelectorAll('input[type="text"]').forEach(input => {
+            input.addEventListener('input', function() {
+                const team = this.dataset.team;
+                const type = this.dataset.type;
+                const index = this.dataset.index;
+
+                if (team && type && index !== undefined) {
+                    // Update pick/ban
+                    fetch('/api/update', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            team: team,
+                            type: type,
+                            index: index,
+                            champion: this.value
+                        })
+                    });
+                }
+            });
+        });
+
+        // Handle team name changes
+        document.getElementById('blue-team-name').addEventListener('input', function() {
+            fetch('/api/update', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    blue_team_name: this.value
+                })
+            });
+        });
+
+        document.getElementById('red-team-name').addEventListener('input', function() {
+            fetch('/api/update', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    red_team_name: this.value
+                })
+            });
+        });
+
+        // Handle reset button
+        document.getElementById('reset-button').addEventListener('click', function() {
+            if (confirm('Are you sure you want to reset all picks and bans?')) {
+                fetch('/reset', {
+                    method: 'POST',
+                }).then(() => {
+                    // Clear all input fields
+                    document.querySelectorAll('input[type="text"]').forEach(input => {
+                        if (input.id !== 'blue-team-name' && input.id !== 'red-team-name') {
+                            input.value = '';
+                        }
+                    });
+                });
+            }
+        });
+
+        // Load initial state
+        fetch('/api/state')
+            .then(response => response.json())
+            .then(data => {
+                // Set team names
+                document.getElementById('blue-team-name').value = data.blue_team_name;
+                document.getElementById('red-team-name').value = data.red_team_name;
+
+                // Set picks and bans
+                ['blue', 'red'].forEach(team => {
+                    ['picks', 'bans'].forEach(type => {
+                        const values = data[`${team}_team_${type}`];
+                        if (values) {
+                            values.forEach((value, index) => {
+                                const input = document.querySelector(
+                                    `input[data-team="${team}"][data-type="${type}"][data-index="${index}"]`
+                                );
+                                if (input) input.value = value;
+                            });
+                        }
+                    });
+                });
+            });
+    </script>
+</body>
+</html>
